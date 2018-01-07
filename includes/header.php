@@ -43,8 +43,8 @@
 								<?php
 								$pquery2 = $pquery2->fetchAll(PDO::FETCH_ASSOC);
 								foreach ($pquery2 as $child) :?>
-									<?php $url = $child['url']; ?>
-									<li><a href="<?= $url; ?>"><?php echo $child['category']; ?></a></li>
+									<?php $id = $child['id']; ?>
+									<li><a href="display_categorywise_products.php?id=<?= $id; ?>"><?= $child['category']; ?></a></li>
 								<?php endforeach;?>
 							</ul>
 						</li>
