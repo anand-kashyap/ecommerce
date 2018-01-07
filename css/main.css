@@ -1,0 +1,135 @@
+body
+{
+	padding-top: 50px;
+}
+
+.modal-open #navbar
+{
+	width: calc(width+17px);
+}
+
+#navbar
+{
+	background-color: #2AE883;
+}
+
+#textc
+{
+	color: #fff;
+}
+
+.container-fluid .row .head_brand {
+	font-size: 2.7rem;
+	color: #000;
+	text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1),
+							 2px 2px 0 rgba(0, 0, 0, 0.2),
+							 3px 3px 0 rgba(0, 0, 0, 0.3),
+							 4px 4px 0 rgba(0, 0, 0, 0.4);
+}
+
+.open #textc
+{
+	background-color: #25B769;
+}
+
+#back_img
+{
+	width: 100%;
+	overflow-x: hidden;
+	height: 93vh;
+	position: relative;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-position: top center;
+	background-size: cover;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6)), url('../images/backg.jpg');
+}
+
+#image1
+{
+	position: absolute;
+	border-radius: 5px;
+	top: 20px;
+	left: 10%;
+	background-repeat: no-repeat;
+	background-position: top center;
+	background-size: cover;
+	height: 500px;
+	width: calc(100vw - 20%);
+	background-image: url('../images/img1.jpg');
+}
+
+#images
+{
+	height: 200px;
+	width: auto;
+	background-position: center right;
+}
+
+#footer1
+{
+	background-color: #21B265;
+	width: 100%;
+	height: 40px;
+	margin-top: 50px;
+	color: #fff;
+}
+
+.details
+{
+	margin-left:15px;
+	height: 420px;
+	width: auto;
+}
+
+.inputqs
+{
+	margin-left: -15px;
+	height: 60px;
+}
+
+.feat
+{
+	background-color: #2AE883;
+	border: none;
+}
+
+
+/*search_box*/
+.search_box {
+	margin: 8px 0 auto;
+	position: relative;
+	width: 100%;
+}
+
+.search_box input {
+	outline: none;
+	margin-right: 0;
+	font-size: 1.2rem;
+	border: solid 1px #ced0d4;
+	padding: 7px 10px;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+	width: 352px;
+}
+
+.search_box input:active, .search_box input:visited, .search_box input:focus {
+	border-bottom-left-radius: 0;
+}
+
+.search_box button {
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+	margin-left: -5px;
+  font-size: 1.2rem;
+  padding: 7px 12px;
+	box-sizing: content-box;
+	background: #f6f7f9;
+	border: solid 1px #ced0d4;
+	color: #4b4f56;
+}
+
+.auto {
+	z-index: 1031;
+
+}
