@@ -1,4 +1,10 @@
 $(function(){
+var loc = window.location.pathname;
+// alert(loc);
+if (loc === "/ecommerce/") {
+	$('footer').removeClass('footer1')
+}
+
 $(".feat").on("click", function()
 		{
 			$('html,body').animate(
@@ -6,8 +12,7 @@ $(".feat").on("click", function()
 		        'slow');
 			});
 
-
-  $('.autosuggest').autocomplete({
+$('.autosuggest').autocomplete({
                source: "http://ak-pc/ecommerce/ajax/autocomplete.php",
 							 classes: {
 								        "ui-autocomplete": "auto"

@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.0
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Dec 08, 2017 at 10:52 AM
--- Server version: 10.1.26-MariaDB
--- PHP Version: 7.1.8
+-- Host: localhost
+-- Generation Time: Jan 09, 2018 at 07:31 AM
+-- Server version: 10.1.28-MariaDB
+-- PHP Version: 7.1.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `green_rock2`
+-- Database: `green_rock`
 --
 
 -- --------------------------------------------------------
@@ -54,22 +54,21 @@ INSERT INTO `brand` (`id`, `brand`) VALUES
 CREATE TABLE `categories` (
   `id` int(11) NOT NULL,
   `category` varchar(255) NOT NULL,
-  `parent` int(11) NOT NULL DEFAULT '0',
-  `url` varchar(255) NOT NULL
+  `parent` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `categories`
 --
 
-INSERT INTO `categories` (`id`, `category`, `parent`, `url`) VALUES
-(1, 'Men', 0, ''),
-(2, 'Women', 0, ''),
-(3, 'Shirts', 1, '/ecommerce/men_shirts.php'),
-(4, 'Pants', 1, '/ecommerce/men_pants.php'),
-(5, 'Dresses', 2, '/ecommerce/women_dresses.php'),
-(6, 'Jeans', 2, '/ecommerce/women_jeans.php'),
-(7, 'T-shirts', 1, '/ecommerce/men_tshirts.php');
+INSERT INTO `categories` (`id`, `category`, `parent`) VALUES
+(1, 'Men', 0),
+(2, 'Women', 0),
+(3, 'Shirts', 1),
+(4, 'Pants', 1),
+(5, 'Dresses', 2),
+(6, 'Jeans', 2),
+(7, 'T-shirts', 1);
 
 -- --------------------------------------------------------
 
@@ -95,7 +94,7 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `title`, `price`, `list_price`, `brand`, `categories`, `image`, `description`, `featured`, `sizes`) VALUES
-(1, 'Levis Shirt', '20.99', '17.99', 1, '3', '/ecommerce/images/levisshirt.jpeg', 'This is an amazing shirt.You must try this one asap.', 1, 'M:10,L:6,XL:2'),
+(1, 'Levis Shirt', '17.99', '20.99', 1, '3', '/ecommerce/images/levisshirt.jpeg', 'This is an amazing shirt.You must try this one asap.', 1, 'M:10,L:6,XL:2'),
 (2, 'Espirit T-shirt', '12.99', '15.99', 2, '7', '/ecommerce/images/espirit.jpg', 'Great t-shirt for summer. Pair it with white sneakers to get a fashionable look.', 1, 'M:15,L:20,XL:10'),
 (3, 'Ether Formal Shirt', '10.99', '14.99', 3, '3', '/ecommerce/images/ether.jpg', 'Rock this formal shirt with dark colored trousers to make sure heads turn around when walk by.', 1, 'M:12,L:20,XL:17'),
 (5, 'HRX T-Shirt', '16.99', '30.99', 5, '7', '/ecommerce/images/hrx.jpg', 'Rock this t-Shirt with dark colored jeans to make sure heads turn around when walk by.', 1, 'S:8,M:10,L:15,XL:10'),
@@ -133,16 +132,19 @@ ALTER TABLE `products`
 --
 ALTER TABLE `brand`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
 --
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;COMMIT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

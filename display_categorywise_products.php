@@ -1,9 +1,10 @@
 <?php include 'includes/header.php'; ?>
 <?php
-$id = $_GET['id'];
+$id = $db->quote(htmlentities(trim($_GET['id']))); //protection against
+$id = trim($id,"'");															//sql injections
 $sqls = "Select * from products where categories = {$id}";
-	  $pantquery = $db->query("$sqls");
-	  $a = 1;
+$pantquery = $db->query("$sqls");
+$a = 1;
  ?>
  <div class="col-md-12">
 	<div class="col-md-1"></div>
