@@ -1,24 +1,22 @@
 <?php include 'includes/header.php'; ?>
 <?php include 'func.php'; ?>
-<h2>Search results</h2>
+<div class="container">
+  <div class="row">
+      <h2 class="text-center">Search results</h2>
 <?php
     if(isset($_POST['keywords'])) {
       $keywords = $db->quote(htmlentities(trim($_POST['keywords'])));
-      // $key = $db->prepare(":keywords");
-      // $key->execute(['keywords' => $keywords]);
       $keywords = trim($keywords,"'");
       // var_dump($keywords);
       // die();
       $errors = array();
-      // $errors[] = $key[0];
-      // echo strlen($errors[0]);
       if (empty($keywords)) {
-        $errors[] = 'enter a search term';
+        $errors[] = '<h4>Please enter a search term</h4>';
       } else if (strlen($keywords) < 3) {
-        $errors[] = 'search term must be three or more characters';
+        $errors[] = '<h4>search term must be three or more characters.</h4>';
       }
       else if (search_results($keywords, $db) === false) {
-        $errors[] = 'No results found for <strong>'.$keywords.'</strong>';
+        $errors[] = '<h4>No results found for "'.$keywords.'"</h4>';
       }
 
       if (empty($errors)) {
@@ -26,13 +24,14 @@
         $result = search_results($keywords, $db);
         $results_num = count($result);
         if ($results_num == 1) {
-          echo "<strong>".$results_num."</strong> result found";
+          echo "<h4><strong>".$results_num."</strong> result found for \"".$keywords."\"</h4>";
         } else {
-          echo "<strong>".$results_num."</strong> results found";
+          echo "<h4><strong>".$results_num."</strong> results found for \"".$keywords."\"</h4>";
         }
 
         foreach ($result as $res) {
             ?>
+
             <h2><?=$res['title'];?></h2>
             <img src="<?=$res['image'];?>" alt="<?=$res['title'];?>">
             <p><?=$res['list_price'];?></p>
@@ -50,5 +49,6 @@
 
     }
     ?>
-
+    </div>
+</div>
 <?php include 'includes/footer.php'; ?>
