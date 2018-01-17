@@ -1,9 +1,10 @@
 $(function(){
-var loc = window.location.pathname;
-// alert(loc);
-if (loc === "/ecommerce/") {
-	$('footer').removeClass('footer1')
-}
+	var link = window.location.pathname;
+	// var pram = getURLParameter(link, 'page');
+	if (link != '/ecommerce/') {
+		$('.featured_tab').addClass('hide');
+		// alert("success");
+	}
 
 $(".feat").on("click", function()
 		{

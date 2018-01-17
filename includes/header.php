@@ -19,7 +19,7 @@
 						$sql = "Select * from categories where parent = 0";
 						$pquery = $db->query($sql);
 				?>
-	<nav class="navbar navbar-default navbar-fixed-top default_col" id="navbar">
+	<nav class="navbar navbar-default navbar-fixed-top" id="navbar">
 		<div class="container-fluid" >
 			<div class="row">
 				<div class="col-md-1"></div>
@@ -49,7 +49,7 @@
 							</ul>
 						</li>
 					<?php endforeach;?>
-						<li>
+						<li class="featured_tab">
 							<a class="btn btn-default feat" id="textc">Featured Products</a>
 						</li>
 					</ul>
@@ -58,7 +58,7 @@
 					<div class="search_box">
 						<form action="search_result.php" method="post" autocomplete="off">
 								<input class="autosuggest" type="text" name="keywords" value="">
-								<button type="button" name="search_button">Search</button>
+								<span class="glyphicon glyphicon-search search-icon"></span>
 					</form>
 					</div>
 				</div>

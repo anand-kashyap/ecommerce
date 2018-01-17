@@ -6,9 +6,7 @@ $sqls = "Select * from products where categories = {$id}";
 $pantquery = $db->query("$sqls");
 $a = 1;
  ?>
- <div class="col-md-12">
-	<div class="col-md-1"></div>
-	<div class="col-md-10">
+ <div class="container">
 		<div class="row">
 			<?php $sqlq2 = "select category as cat, parent from categories where id = '{$id}'";
 						$sqlq2 = $db->query("$sqlq2");
@@ -35,8 +33,6 @@ $a = 1;
 					</div>
 				<?php include 'details-num.php';?>
 			<?php endforeach; ?>
-
 		</div>
-	</div>
 	</div>
 <?php include 'includes/footer.php'; ?>
